@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-        Docker="C:\Users\nagal\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe"
+        Docker="C:/Users/nagal/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe"
     }
 
     stages {
@@ -18,9 +18,9 @@ pipeline {
         stage('Deploy Container') {
             steps {
                 bat '''
-                docker stop vite-container || echo Container not running
-                docker rm vite-container || echo Container not found
-                docker run -d -p 8081:80 --name vite-container vite-app
+                "%docker%" stop vite-container || echo Container not running
+                "%docker%" rm vite-container || echo Container not found
+                "%docker%" run -d -p 8081:80 --name vite-container vite-app
                 '''
             }
         }
