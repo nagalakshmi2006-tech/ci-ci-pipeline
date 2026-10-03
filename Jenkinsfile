@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-        Docker="C:\Program Files\Docker\Docker\resources\bin\docker.exe"
+        Docker="C:\Users\nagal\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe"
     }
 
     stages {
